@@ -3,7 +3,7 @@ A discord bot for pen spinning that I hope can improve the discord communities' 
 
 Scroll to bottom for status
 
-NOTE: I WILL ONLY RELEASE THE BOT INVITE LINK LATER ON WHEN I'M A BIT MORE AHEAD WITH THE DEVELOPMENT
+> NOTE: I WILL ONLY RELEASE THE BOT INVITE LINK LATER ON WHEN I'M A BIT MORE AHEAD WITH THE DEVELOPMENT
 
 ## C O N C E P T
 ### Goal:
@@ -17,8 +17,8 @@ NOTE: I WILL ONLY RELEASE THE BOT INVITE LINK LATER ON WHEN I'M A BIT MORE AHEAD
 ## R U L E S
 ### Methods of Contribution:
 1. Providing suggestions for new ideas (in discord testing server)
-2. Exposing issues with old implementations (in discord testing server)
-3. As if currently I don't require any help with the actual bot's code (unless you're that good then sure join in) but I'm looking forward to adding short descriptions or responses to certain commands to elaborate on the detail. Therefore any ps writers that would like to help with this are free to contact me.
+2. Exposing issues with old implementations `(in discord testing server)`
+3. As if currently I don't require any help with the actual bot's code `(unless you're that good then sure join in)` but I'm looking forward to adding short descriptions or responses to certain commands to elaborate on the detail. Therefore any ps writers that would like to help with this are free to contact me.
 4. If you would like to help moderate over the project through boring stuff like updating posts or pages regarding this then again you can contact me but know that I'll be less welcoming with this role as it can be easily covered up for.
 
 ### Contact:
@@ -27,12 +27,14 @@ NOTE: I WILL ONLY RELEASE THE BOT INVITE LINK LATER ON WHEN I'M A BIT MORE AHEAD
 3. Messaging or pinging me once is enough, I know I don't have a life but still.
 4. Adding on to the previous point please only contact me through only one form of media, there is no need for you to message me in every single way possible.
 5. For inquiries related to this you can contact me through the following:
-  + Bot Testing Discord Server link: ___https://discord.gg/UEwf6RWqU2___
+  + Bot Testing Discord Server link: ***https://discord.gg/UEwf6RWqU2***
   + To contact me on Discord use my profile in the server above (not putting my Discord tag here for reasons)
-  + PS-Based Instagram: ___@mizushi.ps___
-  + PS-Based Twitter: ___@M1zushiPS___
+  + PS-Based Instagram: ***@mizushi.ps***
+  + PS-Based Twitter: ***@M1zushiPS***
 
 ## S T A T U S
-+ Functionality: Working
-+ Development: Early Stages
-+ Progress: (Too much to put here) The project Trello page: https://trello.com/b/hKES1X7I
+**Field** | **Details**
+--- | ---
+*Functionality* | `Working`
+*Development* | `Beginning Stages`
+*Progress* | `https://trello.com/b/hKES1X7I`
