@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 load_dotenv('.env')
 
 # SETS UP BASICS
-client = commands.Bot(command_prefix = "ps.",
+client = commands.Bot(command_prefix = 'ps ',
                       case_insensitive = True,
                       activity = discord.Activity(type=discord.ActivityType.playing, name='sls spam'),
                       status = discord.Status.dnd
@@ -33,6 +33,10 @@ async def drop(ctx):
     if ctx.author.id in {int(os.getenv('MIZU_ID'))}:
         await ctx.send('I dropped my mod...')
         await client.logout()
+
+@client.command()
+async def load(ctx, extension):
+    client.load_extension(f'cogs.{extension}')
 
 
 # HELP COMMAND: GIVES INFO ABOUT USING THE BOT
@@ -74,7 +78,7 @@ async def discord_mango(ctx):
 
 @client.command()
 async def discord_fenspinner(ctx):
-    await ctx.send('https://discord.gg/M2qyDhc8Hr')
+    await ctx.send('https://discord.gg/U3CpbYY3fP')
 
 @client.command()
 async def discord_frenchboard(ctx):
@@ -92,6 +96,18 @@ async def discord_polishboard(ctx):
 async def discord_germancommunity(ctx):
     await ctx.send('https://discord.com/invite/aUuz8sh')
 
+@client.command()
+async def discord_birthdaycrimes(ctx):
+    await ctx.send('https://discord.gg/mYkh4nu9Uv')
+
+
+# ATTACHES EXPLANATION FOR PS NOTATIONS
+@client.command()
+async def notation(ctx):
+    await ctx.send('''```
+    
+    ```''')
+
 
 # ATTACHES LINKS FOR PS LINKAGES
 @client.command()
@@ -108,6 +124,11 @@ async def breakdowngenerator(ctx):
 # async def controversial_cv(ctx):
 #     await ctx.send('idfk')
 
+
+# IMPORTS COGS
+for filename in os.listdir('./cogs'):
+    if filename.endswith('.py'):
+        client.load_extension(f'cogs.{filename[:-3]}')
 
 # RUNS BOT
 client.run(os.getenv('DISCORD_TOKEN'))
