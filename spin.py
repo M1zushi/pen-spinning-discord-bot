@@ -34,11 +34,6 @@ async def drop(ctx):
         await ctx.send('I dropped my mod...')
         await client.logout()
 
-@client.command()
-async def load(ctx, extension):
-    client.load_extension(f'cogs.{extension}')
-
-
 # HELP COMMAND: GIVES INFO ABOUT USING THE BOT
 # @client.command()
 # async def help(ctx):
@@ -105,7 +100,7 @@ async def discord_birthdaycrimes(ctx):
 @client.command()
 async def notation(ctx):
     await ctx.send('''```
-    
+
     ```''')
 
 
@@ -114,9 +109,61 @@ async def notation(ctx):
 async def breakdowngenerator(ctx):
     await ctx.send('https://limezzje.github.io/PS/')
 
-# @client.command()
-# async def sls(ctx):
-#     await ctx.send('Literally all blocked cmon Tigres repost')
+@client.command()
+async def sls(ctx):
+    await ctx.send('Playlist: https://youtube.com/playlist?list=PLqvo4PPYx7nU8j3Cjz2u6dZ7s0FERNJ7y')
+
+@client.command()
+async def sls1(ctx):
+    await ctx.send('SLS 1: https://youtu.be/a7AoLeswfuU')
+
+@client.command()
+async def sls2(ctx):
+    await ctx.send('SLS 2: https://youtu.be/S0XiczC333A')
+
+@client.command()
+async def sls3(ctx):
+    await ctx.send('SLS 3: https://youtu.be/7sSxBwdLsz0')
+
+@client.command()
+async def sls4(ctx):
+    await ctx.send('SLS 4: https://youtu.be/JAnskN6yrI4')
+
+@client.command()
+async def sls5(ctx):
+    await ctx.send('SLS 5: https://youtu.be/sTGL8CwVmUU')
+
+@client.command()
+async def sls6(ctx):
+    await ctx.send('SLS 6: https://youtu.be/O0pGMTkd1X8')
+
+@client.command()
+async def sls7(ctx):
+    await ctx.send('SLS 7: https://youtu.be/GL16ck0nB7w')
+
+@client.command()
+async def sls8(ctx):
+    await ctx.send('SLS 8: https://youtu.be/IIlHERIYS9s')
+
+@client.command()
+async def sls9(ctx):
+    await ctx.send('SLS 9: https://youtu.be/bNq79vmZLb0')
+
+@client.command()
+async def sls10(ctx):
+    await ctx.send('SLS 10: https://youtu.be/k-Pfsv9oYmA')
+
+@client.command()
+async def sls11(ctx):
+    await ctx.send('SLS 11: https://youtu.be/2bWAwH5tXyM')
+
+@client.command()
+async def sls12(ctx):
+    await ctx.send('SLS 12: https://youtu.be/e96HEzZGjrI')
+
+@client.command()
+async def sls13(ctx):
+    await ctx.send('SLS 13: https://youtu.be/lGPHTC-jdU8')
 
 
 # ATTACHES LINKS FOR POPULAR CVS/SOLOS/PROMOS
@@ -127,7 +174,7 @@ async def breakdowngenerator(ctx):
 
 # IMPORTS COGS
 for filename in os.listdir('./cogs'):
-    if filename.endswith('.py'):
+    if filename.endswith('s.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
 # RUNS BOT
