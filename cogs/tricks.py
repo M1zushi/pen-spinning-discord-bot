@@ -1,8 +1,13 @@
 import discord
 from discord.ext import commands
+
 import asyncio
 import random
+
 import os
+import sys
+
+# from shortname.py import ShortName
 
 class Tricks(commands.Cog):
 
@@ -11,61 +16,62 @@ class Tricks(commands.Cog):
 
 
     @commands.command()
-    async def how_to(self, ctx, trick):
-        for x in tricks:
-            if x == trick:
-                # Fundementals
-                if x == 'thumbaround' or x == 'ta':
-                    await ctx.send('Thumbaround Tutorial: \nhttps://youtu.be/vEvPPVCH6cg')
-                elif x == 'sonic':
-                    await ctx.send('Sonic Tutorial: \nhttps://youtu.be/ueeZ3W7DIQo')
-                elif x == 'fingerpass' or x == 'fp':
-                    await ctx.send('Fingerpass Tutorial: \nhttps://youtu.be/0EuJwfJHTyI')
-                elif x == 'charge':
-                    await ctx.send('Charge Tutorial: \nhttps://youtu.be/AIe1jCYFNw0')
+    async def how_to(self, ctx, x):
 
-                # Fundementals Reverse
-                elif x == 'thumbaround reverse' or x == 'ta rev' or x == 'rev ta':
-                    await ctx.send('Thumbaround Reverse Tutorial: \nhttps://youtu.be/gAf0BbipZ-I')
-                elif x == 'sonic reverse':
-                    await ctx.send('Sonic Reverse Tutorial: \nhttps://youtu.be/5nh_cXf71l8')
-                elif x == 'fingerpass reverse' or x == 'fp rev' or x == 'rev fp':
-                    await ctx.send('Fingerpass Reverse Tutorial: \nhttps://youtu.be/-BLoyJtbpn8')
-                elif x == 'charge reverse':
-                    await ctx.send('Charge Reverse Tutorial: \nhttps://youtu.be/kGyShNYrPhs')
+        # Fundementals
+        if x in ta: # if x in ShortName.ta.value:
+            await ctx.send('Thumbaround Tutorial: \nhttps://youtu.be/vEvPPVCH6cg')
+        elif x == 'sonic':
+            await ctx.send('Sonic Tutorial: \nhttps://youtu.be/ueeZ3W7DIQo')
+        elif x in fp:
+            await ctx.send('Fingerpass Tutorial: \nhttps://youtu.be/0EuJwfJHTyI')
+        elif x == 'charge':
+            await ctx.send('Charge Tutorial: \nhttps://youtu.be/AIe1jCYFNw0')
 
-                # Mega's Basics
-                elif x == 'twisted sonic':
-                    await ctx.send('Twisted Sonic Tutorial: \nhttps://youtu.be/lCPB05Hifhw')
-                elif x == 'backaround':
-                    await ctx.send('Backaround Tutorial: \nhttps://youtu.be/DaOCyWGZRCM')
-                elif x == 'scizzor spin':
-                    await ctx.send('Scizzor Spin Tutorial: \nhttps://youtu.be/PUTTwcuzC1U')
-                elif x == 'neosonic':
-                    await ctx.send('Neosonic: \nhttps://youtu.be/GnMmulpAMM8')
+        # Fundementals Reverse
+        elif x == 'thumbaround reverse' or x == 'ta rev' or x == 'rev ta':
+            await ctx.send('Thumbaround Reverse Tutorial: \nhttps://youtu.be/gAf0BbipZ-I')
+        elif x == 'sonic reverse':
+            await ctx.send('Sonic Reverse Tutorial: \nhttps://youtu.be/5nh_cXf71l8')
+        elif x == 'fingerpass reverse' or x == 'fp rev' or x == 'rev fp':
+            await ctx.send('Fingerpass Reverse Tutorial: \nhttps://youtu.be/-BLoyJtbpn8')
+        elif x == 'charge reverse':
+            await ctx.send('Charge Reverse Tutorial: \nhttps://youtu.be/kGyShNYrPhs')
 
-                # Mega's Basics Reverse
-                # Trciks
+        # Mega's Basics
+        elif x == 'twisted sonic':
+            await ctx.send('Twisted Sonic Tutorial: \nhttps://youtu.be/lCPB05Hifhw')
+        elif x == 'backaround':
+            await ctx.send('Backaround Tutorial: \nhttps://youtu.be/DaOCyWGZRCM')
+        elif x == 'scizzor spin':
+            await ctx.send('Scizzor Spin Tutorial: \nhttps://youtu.be/PUTTwcuzC1U')
+        elif x == 'neosonic':
+            await ctx.send('Neosonic: \nhttps://youtu.be/GnMmulpAMM8')
 
-                # Mega's Confirmed
-                elif x == 'inverse sonic':
-                    await ctx.send('Inverse Sonic: \nhttps://youtu.be/k0RhL8a4V9g')
+        # Mega's Basics Reverse
+        # Trciks
 
-                # Mega's Confirmed Reverse
-                # Tricks
+        # Mega's Confirmed
+        elif x == 'inverse sonic':
+            await ctx.send('Inverse Sonic: \nhttps://youtu.be/k0RhL8a4V9g')
 
-                # Mega's Advanced
-                # Tricks
+        # Mega's Confirmed Reverse
+        # Tricks
 
-                # Mega's Advanced Reverse
-                # Trick
+        # Mega's Advanced
+        # Tricks
 
-                # Mega's Expert
-                # Tricks
+        # Mega's Advanced Reverse
+        # Trick
 
-                # Mega's Expert Reverse
-                # Tricks
+        # Mega's Expert
+        # Tricks
 
+        # Mega's Expert Reverse
+        # Tricks
+
+ta = ['thumbaround', 'ta']
+fp = ['fingerpass', 'fp']
 
 tricks = ['thumbaround',
     'charge',
@@ -93,7 +99,6 @@ tricks = ['thumbaround',
     'extended thumbaround',
     'extended thumbaround reverse',
     'neobackaround']
-
 
 def setup(client):
     client.add_cog(Tricks(client))

@@ -12,6 +12,8 @@ import os
 from dotenv import load_dotenv
 load_dotenv('.env')
 
+from cogs/shortname.py import ShortName
+
 # SETS UP BASICS
 client = commands.Bot(command_prefix = 'ps ',
                       case_insensitive = True,
