@@ -12,7 +12,6 @@ import os
 from dotenv import load_dotenv
 load_dotenv('.env')
 
-from cogs/shortname.py import ShortName
 
 # SETS UP BASICS
 client = commands.Bot(command_prefix = 'ps ',
@@ -35,6 +34,8 @@ async def drop(ctx):
     if ctx.author.id in {int(os.getenv('MIZU_ID'))}:
         await ctx.send('I dropped my mod...')
         await client.logout()
+    else:
+        await ctx.send('I only listen to Mizu-kun!')
 
 # HELP COMMAND: GIVES INFO ABOUT USING THE BOT
 # @client.command()
@@ -176,7 +177,7 @@ async def sls13(ctx):
 
 # IMPORTS COGS
 for filename in os.listdir('./cogs'):
-    if filename.endswith('s.py'):
+    if filename.endswith('.py'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
 # RUNS BOT
