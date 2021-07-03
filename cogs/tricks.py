@@ -7,71 +7,74 @@ import random
 import os
 import sys
 
-# from shortname.py import ShortName
-
 class Tricks(commands.Cog):
 
     def __init__(self, client):
         self.client = client
 
-
-    @commands.command()
-    async def how_to(self, ctx, x):
-
-        # Fundementals
-        if x in ta: # if x in ShortName.ta.value:
+    # Fundementals
+    @commands.command(aliases = ['ta'])
+    async def thumbaround(self, ctx, mod='none'):
+        if mod == 'none':
             await ctx.send('Thumbaround Tutorial: \nhttps://youtu.be/vEvPPVCH6cg')
-        elif x == 'sonic':
-            await ctx.send('Sonic Tutorial: \nhttps://youtu.be/ueeZ3W7DIQo')
-        elif x in fp:
-            await ctx.send('Fingerpass Tutorial: \nhttps://youtu.be/0EuJwfJHTyI')
-        elif x == 'charge':
-            await ctx.send('Charge Tutorial: \nhttps://youtu.be/AIe1jCYFNw0')
-
-        # Fundementals Reverse
-        elif x == 'thumbaround reverse' or x == 'ta rev' or x == 'rev ta':
+        elif 'rev' in mod.lower():
             await ctx.send('Thumbaround Reverse Tutorial: \nhttps://youtu.be/gAf0BbipZ-I')
-        elif x == 'sonic reverse':
-            await ctx.send('Sonic Reverse Tutorial: \nhttps://youtu.be/5nh_cXf71l8')
-        elif x == 'fingerpass reverse' or x == 'fp rev' or x == 'rev fp':
+
+    @commands.command(aliases = ['fp'])
+    async def fingerpass(self, ctx, mod='none'):
+        if mod == 'none':
+            await ctx.send('Fingerpass Tutorial: \nhttps://youtu.be/0EuJwfJHTyI')
+        elif 'rev' in mod.lower():
             await ctx.send('Fingerpass Reverse Tutorial: \nhttps://youtu.be/-BLoyJtbpn8')
-        elif x == 'charge reverse':
+
+    @commands.command(aliases = [''])
+    async def sonic(self, ctx, mod='none'):
+        if mod == 'none':
+            await ctx.send('Sonic Tutorial: \nhttps://youtu.be/ueeZ3W7DIQo')
+        elif 'rev' in mod.lower():
+            await ctx.send('Sonic Reverse Tutorial: \nhttps://youtu.be/5nh_cXf71l8')
+
+    @commands.command(aliases = [''])
+    async def charge(self, ctx, mod='none'):
+        if mod == 'none':
+            await ctx.send('Charge Tutorial: \nhttps://youtu.be/AIe1jCYFNw0')
+        elif 'rev' in mod.lower():
             await ctx.send('Charge Reverse Tutorial: \nhttps://youtu.be/kGyShNYrPhs')
 
-        # Mega's Basics
-        elif x == 'twisted sonic':
+
+    # Mega's Basics
+    @commands.command(aliases = ['tws', 'twisted sonic', 'twistedsonic'])
+    async def twisted_sonic(self, ctx, mod='none'):
+        if mod == 'none':
             await ctx.send('Twisted Sonic Tutorial: \nhttps://youtu.be/lCPB05Hifhw')
-        elif x == 'backaround':
+
+    @commands.command(aliases = ['bak'])
+    async def backaround(self, ctx, mod='none'):
+        if mod == 'none':
             await ctx.send('Backaround Tutorial: \nhttps://youtu.be/DaOCyWGZRCM')
-        elif x == 'scizzor spin':
+
+    @commands.command(aliases = ['scizzor spin', 'scizzorspin'])
+    async def scizzor_spin(self, ctx, mod='none'):
+        if mod == 'none':
             await ctx.send('Scizzor Spin Tutorial: \nhttps://youtu.be/PUTTwcuzC1U')
-        elif x == 'neosonic':
+
+    @commands.command(aliases = ['neo sonic'])
+    async def neosonic(self, ctx, mod='none'):
+        if mod == 'none':
             await ctx.send('Neosonic: \nhttps://youtu.be/GnMmulpAMM8')
 
-        # Mega's Basics Reverse
-        # Trciks
-
-        # Mega's Confirmed
-        elif x == 'inverse sonic':
+    # Mega's Confirmed
+    @commands.command(aliases = ['inverse sonic', 'inv sonic'])
+    async def inverse_sonic(self, ctx, mod='none'):
+        if mod == 'none':
             await ctx.send('Inverse Sonic: \nhttps://youtu.be/k0RhL8a4V9g')
 
-        # Mega's Confirmed Reverse
-        # Tricks
+    # Mega's Advanced
 
-        # Mega's Advanced
-        # Tricks
 
-        # Mega's Advanced Reverse
-        # Trick
+    # Mega's Expert
 
-        # Mega's Expert
-        # Tricks
 
-        # Mega's Expert Reverse
-        # Tricks
-
-ta = ['thumbaround', 'ta']
-fp = ['fingerpass', 'fp']
 
 tricks = ['thumbaround',
     'charge',
