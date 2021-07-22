@@ -30,24 +30,6 @@ class Mods(commands.Cog):
     #     except # Results not found:
     #         await ctx.send('``! Please input a valid mod name !``')
 
-    # def get_source(url):
-    # """Return the source code for the provided URL.
-    #
-    # Args:
-    #     url (string): URL of the page to scrape.
-    #
-    # Returns:
-    #     response (object): HTTP response object from requests_html.
-    # """
-    #
-    # try:
-    #     session = HTMLSession()
-    #     response = session.get(url)
-    #     return response
-    #
-    # except requests.exceptions.RequestException as e:
-    #     print(e)
-    #
 
     @commands.command(name="Mod Search Command", aliases=['mod'])
     async def _modsearch(self, ctx, mod):
@@ -66,12 +48,16 @@ class Mods(commands.Cog):
 
             query = urllib.parse.quote_plus(query)
             response = source("https://penmodding.pm/?s=" + query)
-            links = list(response.html.absolute_links)
+            results = list(response.html.absolute_links)
             penmodding_domain = ('https://penmodding.')
 
             for url in links[:]:
                 if not url.startswith(penmodding_domain):
                     links.remove(url)
+            #     elif query not in url:
+            #         links.remove(url)
+
+            return results[0]
 
         modlink = modsearch(mod)
 
