@@ -38,9 +38,9 @@ class Mods(commands.Cog):
                 '#general-wrapper div.col-lg-8.col-md-12.col-sm-12.col-xs-12.site-content-left.fixed-sidebar > div > div:first').html()
 
             res = {
-                url: re.search(r'image.*?a href=\"(.*?)\"', html).group(1),
-                img_url: re.search(r'img src=\"(.*?)\"', html).group(1),
-                title: re.search(r'title=\"(.*?)\"', html).group(1)
+                'url': re.search(r'image.*?a href=\"(.*?)\"', html).group(1),
+                'img_url': re.search(r'img src=\"(.*?)\"', html).group(1),
+                'title': re.search(r'title=\"(.*?)\"', html).group(1)
             }
             # modlink = modsearch(mod)
 
