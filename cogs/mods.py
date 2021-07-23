@@ -3,12 +3,11 @@ from discord.ext import commands
 
 import asyncio
 import requests
-import urllib
+from pyquery import PyQuery
 
 # import pandas as pd
-from requests_html import HTML
-from requests_html import HTMLSession
 
+import re
 import os
 import sys
 
@@ -30,38 +29,25 @@ class Mods(commands.Cog):
     #     except # Results not found:
     #         await ctx.send('``! Please input a valid mod name !``')
 
-
     @commands.command(name="Mod Search Command", aliases=['mod'])
-    async def _modsearch(self, ctx, mod):
+    async def _modsearch(self, ctx, mod: str):
+        try:
+            pq = PyQuery(requests.get(
+                'https://penmodding.pm/', headers={'s': mod}).text)
+            html = pq(
+                '#general-wrapper div.col-lg-8.col-md-12.col-sm-12.col-xs-12.site-content-left.fixed-sidebar > div > div:first').html()
 
-        def source(url):
+            res = {
+                url: re.search(r'image.*?a href=\"(.*?)\"', html).group(1),
+                img_url: re.search(r'img src=\"(.*?)\"', html).group(1),
+                title: re.search(r'title=\"(.*?)\"', html).group(1)
+            }
+            # modlink = modsearch(mod)
 
-            try:
-                session = HTMLSession()
-                response = session.get(url)
-                return response
+            await ctx.send(f'{res["title"]} - {res["url"]}')
 
-            except requests.exceptions.RequestException as e:
-                print(e)
-
-        def modsearch(query):
-
-            query = urllib.parse.quote_plus(query)
-            response = source("https://penmodding.pm/?s=" + query)
-            results = list(response.html.absolute_links)
-            penmodding_domain = ('https://penmodding.')
-
-            for url in links[:]:
-                if not url.startswith(penmodding_domain):
-                    links.remove(url)
-            #     elif query not in url:
-            #         links.remove(url)
-
-            return results[0]
-
-        modlink = modsearch(mod)
-
-        await ctx.send(f'{modlink}')
+        except Exception as e:
+            await ctx.send(f"Something went wrong. Traceback:```\n{e}```")
 
 
 def setup(client):
