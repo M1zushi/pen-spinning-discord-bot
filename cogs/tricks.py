@@ -49,12 +49,16 @@ class Tricks(commands.Cog):
             if mod == 'none':
                 await ctx.send('__**Twisted Sonic Tutorial:**__ https://youtu.be/lCPB05Hifhw')
             elif 'rev' in mod.lower():
-                await ctx.send('')
+                await ctx.send('__**Twisted Sonic Reverse Tutorial:**__ https://youtu.be/d_OVOZh1Bc4')
+            elif 'bust' in mod.lower():
+                await ctx.send('__**Twisted Sonic Bust Tutorial:**__ https://youtu.be/lCPB05Hifhw')
 
     @commands.command(name="Backaround", aliases=['bak', 'cockaround'])
     async def _backaround(self, ctx, mod='none'):
         if mod == 'none':
             await ctx.send('__**Backaround Tutorial:**__ https://youtu.be/DaOCyWGZRCM')
+        elif mod == 'all':
+            await ctx.send('__**Mid, Ring, Pinky Backarounds Tutorial:**__ https://youtu.be/XsNjUuM2Oo0')
 
     @commands.command(name="Scizzor Spin", aliases=['scizzor', 'scizzorspin'])
     async def _scizzor_spin(self, ctx, spin='spin', mod='none'):
@@ -67,21 +71,47 @@ class Tricks(commands.Cog):
         if 'sonic' in sonic.lower():
             if mod == 'none':
                 await ctx.send('__**Neosonic:**__ https://youtu.be/GnMmulpAMM8')
+            elif 'rev' in mod.lower():
+                await ctx.send('__**Neosonic Reverse**__ https://youtu.be/QXFrR67JqFg')
 
     # Mega's Confirmed
-    @commands.command(name="Inverse Tricks", aliases=['inv', 'inverse'])
-    async def _inverse_tricks(self, ctx, trick, mod='none'):
+    @commands.command(name="Inverse Sonic", aliases=['inv', 'inverse'])
+    async def _inverse_sonic(self, ctx, trick, mod='none'):
         if 'sonic' in trick.lower():
             if mod == 'none':
                 await ctx.send('__**Inverse Sonic:**__ https://youtu.be/k0RhL8a4V9g')
             elif 'rev' in mod.lower():
-                await ctx.send('__**Inverse Sonic Reverse:**__ link')
+                await ctx.send('__**Inverse Sonic Reverse:**__ https://youtu.be/EO-_wZKh494')
+
+    @commands.command(name="Shadow")
+    async def _shadow(self, ctx, mod='none'):
+        if mod == 'none':
+            await ctx.send('__**Shadow:**__ https://youtu.be/T1OZvb5dKqE')
+        elif 'rev' in mod.lower():
+            await ctx.send('__**Shadow Reverse**__ https://youtu.be/nC13FIuldHg')
+
+    @commands.command(name="Bust")
+    async def _bust(self, ctx):
+        await ctx.send('''__**Bust:**__ https://youtu.be/T1OZvb5dKqE
+        \n``NOTE: FOR TWISTED SONIC BUST USE TWS BUST
+        (OR ANY OTHER TWS COMMAND ALIAS FOLLOWED BY BUST)``''')
 
     # Mega's Advanced
 
 
     # Mega's Expert
 
+
+    # More Power Tricks
+
+
+    # More Common Hybrids
+
+
+    # Counter Tricks
+
+
+    # Fingercross?
 
 
 def setup(client):
