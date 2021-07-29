@@ -87,13 +87,10 @@ class EmbedHelpCommand(commands.HelpCommand):
 client = commands.Bot(command_prefix=('ps ', 'ps'),
                       case_insensitive=True,
                       activity=discord.Activity(
-                          type=discord.ActivityType.playing, name='sls spam'),
+                      type=discord.ActivityType.playing, name='sls spam'),
                       status=discord.Status.dnd,
                       help_command=EmbedHelpCommand(),
                       )
-
-
-# client.remove_command('help')
 
 
 @client.event
@@ -129,7 +126,7 @@ async def _trickorder(ctx):
 
 
 @client.command(name="Isuk Trick Order", aliases = ['isuktrickorder'],
-brief='Attachs isuk\'s power trick difficulty categorization/trick order',
+brief='Attachs I.suk\'s power trick difficulty categorization/trick order',
 help='Attaches the link to isuk\'s blog inwhich he goes categorizes power tricks & links by difficulty, proving to be useful as a power trick order')
 async def _isuktrickorder(ctx):
     await ctx.send('http://isukps.blogspot.com/2017/01/power-trick-learning-and-difficulty.html')
@@ -278,8 +275,14 @@ async def _sls13(ctx):
 
 # ATTACHES LINKS FOR POPULAR CVS/SOLOS/PROMOS
 # @client.command()
-# async def controversial_cv(ctx):
+# async def _controversial_cv(ctx):
 #     await ctx.send('idfk')
+
+
+# ATTACHES WORKSHOP PSER MEDIA SHEET
+@client.command(name="Pen Spinning Social Media List", aliases=['media'])
+async def _mediasheet(ctx):
+    await ctx.send('__**Pen Spinning Social Media List:**__\nhttps://docs.google.com/spreadsheets/d/16oxciUROIMXWHtoN7HL1wKNYM2qOvlATfhnO5pPIt4Y/edit?usp=sharing')
 
 
 # IMPORTS COGS
