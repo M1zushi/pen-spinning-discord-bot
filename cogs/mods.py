@@ -17,18 +17,22 @@ class Mods(commands.Cog):
 
     @commands.command(name="Mod Search Command", aliases=['mod'])
     async def _modsearch(self, ctx, *, mod: str):
-        pq = PyQuery(requests.get(
-            'https://penmodding.pm/', params={'s': mod}).text)
-        html = pq(
-            '#general-wrapper div.col-lg-8.col-md-12.col-sm-12.col-xs-12.site-content-left.fixed-sidebar > div > div:first').html()
+        try:
+            pq = PyQuery(requests.get(
+                'https://penmodding.pm/', params={'s': mod}).text)
+            html = pq(
+                '#general-wrapper div.col-lg-8.col-md-12.col-sm-12.col-xs-12.site-content-left.fixed-sidebar > div > div:first').html()
 
-        res = {
-            'url': re.search(r'image.*?a href=\"(.*?)\"', html).group(1),
-            'img_url': re.search(r'img src=\"(.*?)\"', html).group(1),
-            'title': re.search(r'title=\"(.*?)\"', html).group(1)
-        }
+            res = {
+                'url': re.search(r'image.*?a href=\"(.*?)\"', html).group(1),
+                'img_url': re.search(r'img src=\"(.*?)\"', html).group(1),
+                'title': re.search(r'title=\"(.*?)\"', html).group(1)
+            }
 
-        await ctx.send(f'{res["title"]} - {res["url"]}')
+            await ctx.send(f'{res["title"]} - {res["url"]}')
+
+        except:
+            await ctx.send('```⚠️ No results found on pemodding.pm! Please enter a valid mod name! ⚠️```')
 
 
 def setup(client):
