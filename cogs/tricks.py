@@ -56,7 +56,7 @@ class Tricks(commands.Cog):
     @commands.command(name="Backaround", aliases=['bak', 'cockaround'])
     async def _backaround(self, ctx, mod='none'):
         if mod == 'none':
-            await ctx.send('__**Backaround Tutorial:**__ https://youtu.be/DaOCyWGZRCM')
+            await ctx.send('__**Backaround Tutorial:**__ https://youtu.be/DPFTVavvLfI \n``NOTE: Backaround = Korean Backaround = Bak``')
         elif mod == 'all':
             await ctx.send('__**Mid, Ring, Pinky Backarounds Tutorial:**__ https://youtu.be/XsNjUuM2Oo0')
 
@@ -88,7 +88,7 @@ class Tricks(commands.Cog):
         if mod == 'none':
             await ctx.send('__**Shadow:**__ https://youtu.be/T1OZvb5dKqE')
         elif 'rev' in mod.lower():
-            await ctx.send('__**Shadow Reverse**__ https://youtu.be/nC13FIuldHg')
+            await ctx.send('__**Shadow Reverse:**__ https://youtu.be/nC13FIuldHg')
 
     @commands.command(name="Bust")
     async def _bust(self, ctx):
@@ -100,7 +100,15 @@ class Tricks(commands.Cog):
 
 
     # Mega's Expert
+    @commands.command(name="Spider Spin", aliases=['spider', 'ss'])
+    async def _spiderspin(self, ctx, name='spin'):
+        if 'spin' in name.lower():
+            await ctx.send('__**Spider Spin Tutorial:**__ https://youtu.be/7aZjnTooH1Q')
 
+    @commands.command(name="Hai Tua", aliases=['hai'])
+    async def _haitua(self, ctx, name='tua'):
+        if 'tua' in name.lower():
+            await ctx.send('__**Hai Tua Tutorial:**__ https://youtu.be/zd2Sx7bU5qQ')
 
     # More Power Tricks
 
@@ -112,6 +120,16 @@ class Tricks(commands.Cog):
 
 
     # Fingercross?
+
+
+    # Coolio
+    @commands.command(name="Bakflip", aliases=[])
+    async def _bakflip(self, ctx):
+        await ctx.send('__**Bakflip Tutorial:**__ https://youtu.be/o6G6IxyMjPI')
+
+    @commands.command(name="Seasick", aliases=[])
+    async def _seasick(self, ctx):
+        await ctx.send('__**Seasick Tutorial:**__ https://youtu.be/_6LIkOSygYk')
 
 
 def setup(client):
