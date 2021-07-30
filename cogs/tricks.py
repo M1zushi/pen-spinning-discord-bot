@@ -42,7 +42,12 @@ class Tricks(commands.Cog):
         elif 'rev' in mod.lower():
             await ctx.send('__**Charge Reverse Tutorial:**__ https://youtu.be/kGyShNYrPhs')
 
-    # Mega's Basics
+    # Basics
+    @commands.command(name="Figure 8", aliases=['figure'])
+    async def _figure8(self, ctx, name='8'):
+        if '8' in name.lower():
+            await ctx.send('__**Figure 8 Tutorial:**__ https://youtu.be/X3fuisvrrh0')
+
     @commands.command(name="Twisted Sonic", aliases=['tws', 'twistedsonic', 'twisted'])
     async def _twisted_sonic(self, ctx, sonic='sonic', mod='none'):
         if 'sonic' in sonic.lower():
@@ -52,6 +57,11 @@ class Tricks(commands.Cog):
                 await ctx.send('__**Twisted Sonic Reverse Tutorial:**__ https://youtu.be/d_OVOZh1Bc4')
             elif 'bust' in mod.lower():
                 await ctx.send('__**Twisted Sonic Bust Tutorial:**__ https://youtu.be/lCPB05Hifhw')
+        elif 'rev' in sonic.lower():
+            await ctx.send('__**Twisted Sonic Reverse Tutorial:**__ https://youtu.be/d_OVOZh1Bc4')
+        elif 'bust' in sonic.lower():
+                await ctx.send('__**Twisted Sonic Bust Tutorial:**__ https://youtu.be/lCPB05Hifhw')
+
 
     @commands.command(name="Backaround", aliases=['bak', 'cockaround'])
     async def _backaround(self, ctx, mod='none'):
@@ -74,7 +84,7 @@ class Tricks(commands.Cog):
             elif 'rev' in mod.lower():
                 await ctx.send('__**Neosonic Reverse**__ https://youtu.be/QXFrR67JqFg')
 
-    # Mega's Confirmed
+    # Confirmed
     @commands.command(name="Inverse Sonic", aliases=['inv', 'inverse'])
     async def _inverse_sonic(self, ctx, trick, mod='none'):
         if 'sonic' in trick.lower():
@@ -96,10 +106,13 @@ class Tricks(commands.Cog):
         \n``NOTE: FOR TWISTED SONIC BUST USE TWS BUST
         (OR ANY OTHER TWS COMMAND ALIAS FOLLOWED BY BUST)``''')
 
-    # Mega's Advanced
+    # Advanced
+    @commands.command(name="Power Pass", aliases=['power', 'pp'])
+    async def _powerpass(self, ctx, name='pass'):
+        if 'pass' in name.lower():
+            await ctx.send('__**Power Pass Tutorial:**__ https://youtu.be/-MtXqISQow0')
 
-
-    # Mega's Expert
+    # Expert
     @commands.command(name="Spider Spin", aliases=['spider', 'ss'])
     async def _spiderspin(self, ctx, name='spin'):
         if 'spin' in name.lower():
@@ -114,7 +127,15 @@ class Tricks(commands.Cog):
 
 
     # More Common Hybrids
+    @commands.command(name="Demon Sonic", aliases=['demonsonic', 'demon'])
+    async def _demon_sonic(self, ctx, sonic='sonic'):
+        if 'sonic' in sonic.lower():
+            await ctx.send('__**Demon Sonic Tutorial:**__ https://youtu.be/W72RR6DdUyA')
 
+    @commands.command(name="Angel Sonic", aliases=['angelsonic', 'angel'])
+    async def _angel_sonic(self, ctx, sonic='sonic'):
+        if 'sonic' in sonic.lower():
+            await ctx.send('__**Angel Sonic Tutorial:**__ https://youtu.be/YWr_Pbhtd5g')
 
     # Counter Tricks
 
@@ -130,6 +151,10 @@ class Tricks(commands.Cog):
     @commands.command(name="Seasick", aliases=[])
     async def _seasick(self, ctx):
         await ctx.send('__**Seasick Tutorial:**__ https://youtu.be/_6LIkOSygYk')
+
+    @commands.command(name="Menowa 🤙 Stall", aliases=['🤙'])
+    async def _menowarockstall(self, ctx):
+        await ctx.send('__**🤙 Menowa Stall Tutorial 🤙 :**__ https://youtu.be/hanDBvlPjlE')
 
 
 def setup(client):
