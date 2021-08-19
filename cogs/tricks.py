@@ -17,7 +17,9 @@ class Tricks(commands.Cog):
     @commands.command(name="Thumbaround", aliases=['ta'])
     async def _thumbaround(self, ctx, mod='none'):
         if mod == 'none':
-            await ctx.send('__**Thumbaround Tutorial:**__ https://youtu.be/vEvPPVCH6cg')
+            await ctx.send('__**Thumbaround Tutorial:**__ https://youtu.be/vEvPPVCH6cg \n Starting Position Reference by Tombuto:')
+            await ctx.send(file=discord.File('pics/ta_startingpos_Tombuto.jpg'))
+
         elif 'rev' in mod.lower():
             await ctx.send('__**Thumbaround Reverse Tutorial:**__ https://youtu.be/gAf0BbipZ-I')
 
@@ -25,6 +27,7 @@ class Tricks(commands.Cog):
     async def _fingerpass(self, ctx, mod='none'):
         if mod == 'none':
             await ctx.send('__**Fingerpass Tutorial:**__ https://youtu.be/0EuJwfJHTyI')
+
         elif 'rev' in mod.lower():
             await ctx.send('__**Fingerpass Reverse Tutorial:**__ https://youtu.be/-BLoyJtbpn8')
 
@@ -32,6 +35,7 @@ class Tricks(commands.Cog):
     async def _sonic(self, ctx, mod='none'):
         if mod == 'none':
             await ctx.send('__**Sonic Tutorial:**__ https://youtu.be/ueeZ3W7DIQo')
+
         elif 'rev' in mod.lower():
             await ctx.send('__**Sonic Reverse Tutorial:**__ https://youtu.be/5nh_cXf71l8')
 
@@ -39,6 +43,7 @@ class Tricks(commands.Cog):
     async def _charge(self, ctx, mod='none'):
         if mod == 'none':
             await ctx.send('__**Charge Tutorial:**__ https://youtu.be/AIe1jCYFNw0')
+
         elif 'rev' in mod.lower():
             await ctx.send('__**Charge Reverse Tutorial:**__ https://youtu.be/kGyShNYrPhs')
 
@@ -53,12 +58,16 @@ class Tricks(commands.Cog):
         if 'sonic' in sonic.lower():
             if mod == 'none':
                 await ctx.send('__**Twisted Sonic Tutorial:**__ https://youtu.be/lCPB05Hifhw')
+
             elif 'rev' in mod.lower():
                 await ctx.send('__**Twisted Sonic Reverse Tutorial:**__ https://youtu.be/d_OVOZh1Bc4')
+
             elif 'bust' in mod.lower():
                 await ctx.send('__**Twisted Sonic Bust Tutorial:**__ https://youtu.be/lCPB05Hifhw')
+
         elif 'rev' in sonic.lower():
             await ctx.send('__**Twisted Sonic Reverse Tutorial:**__ https://youtu.be/d_OVOZh1Bc4')
+
         elif 'bust' in sonic.lower():
                 await ctx.send('__**Twisted Sonic Bust Tutorial:**__ https://youtu.be/lCPB05Hifhw')
 
@@ -67,6 +76,7 @@ class Tricks(commands.Cog):
     async def _backaround(self, ctx, mod='none'):
         if mod == 'none':
             await ctx.send('__**Backaround Tutorial:**__ https://youtu.be/DPFTVavvLfI \n``NOTE: Backaround = Korean Backaround = Bak``')
+
         elif mod == 'all':
             await ctx.send('__**Mid, Ring, Pinky Backarounds Tutorial:**__ https://youtu.be/XsNjUuM2Oo0')
 
@@ -81,6 +91,7 @@ class Tricks(commands.Cog):
         if 'sonic' in sonic.lower():
             if mod == 'none':
                 await ctx.send('__**Neosonic:**__ https://youtu.be/GnMmulpAMM8')
+
             elif 'rev' in mod.lower():
                 await ctx.send('__**Neosonic Reverse**__ https://youtu.be/QXFrR67JqFg')
 
@@ -90,6 +101,7 @@ class Tricks(commands.Cog):
         if 'sonic' in trick.lower():
             if mod == 'none':
                 await ctx.send('__**Inverse Sonic:**__ https://youtu.be/k0RhL8a4V9g')
+
             elif 'rev' in mod.lower():
                 await ctx.send('__**Inverse Sonic Reverse:**__ https://youtu.be/EO-_wZKh494')
 
@@ -97,6 +109,7 @@ class Tricks(commands.Cog):
     async def _shadow(self, ctx, mod='none'):
         if mod == 'none':
             await ctx.send('__**Shadow:**__ https://youtu.be/T1OZvb5dKqE')
+            
         elif 'rev' in mod.lower():
             await ctx.send('__**Shadow Reverse:**__ https://youtu.be/nC13FIuldHg')
 
