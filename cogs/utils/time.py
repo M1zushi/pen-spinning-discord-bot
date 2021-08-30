@@ -1,4 +1,4 @@
-from formats import format_dt as format_dt
+from .formats import format_dt as format_dt
 
 
 def format_relative(dt):

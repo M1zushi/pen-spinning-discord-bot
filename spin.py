@@ -219,4 +219,4 @@ for filename in os.listdir('./cogs'):
         client.load_extension(f'cogs.{filename[:-3]}')
 
 # RUNS BOT
-client.run(os.getenv('DISCORD_TOKEN'))
+client.run("ODgxODMxNTg5Mjg0MjkwNTYw.YSyjqg.pFgV01o97pafWpo9iDb3yICh68s")

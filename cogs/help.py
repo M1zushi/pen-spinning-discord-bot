@@ -1,5 +1,5 @@
 from discord.ext import commands, menus
-from utils import checks, formats, time
+from utils import checks, time, formats
 from utils.paginator import RoboPages
 import discord
 from collections import Counter
@@ -103,7 +103,7 @@ class FrontPageSource(menus.PageSource):
         self.index = page_number
         return self
 
-    def format_page(self, menu: HelpMenu, page):
+    def format_page(self, menu, page):
         embed = discord.Embed(title='Bot Help', colour=discord.Colour(0xA8B9CD))
         embed.description = inspect.cleandoc(
             f"""
