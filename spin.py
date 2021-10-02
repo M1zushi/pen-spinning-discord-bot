@@ -6,90 +6,17 @@ import os
 
 # PACKAGES & IMPORTS
 import discord
-from discord.ext import commands
+import discord.ext.commands as commands
 from dotenv import load_dotenv
 
 load_dotenv('.env')
 
-
-class EmbedHelpCommand(commands.HelpCommand):
-    # Set the embed colour here
-    COLOUR = discord.Colour(0Xb8f2f2)
-
-    def get_ending_note(self):
-        return 'Use {0}{1} [command] for more info on a command.'.format(self.clean_prefix, self.invoked_with)
-
-    def get_command_signature(self, command):
-        return '{0.qualified_name} {0.signature}'.format(command)
-
-    async def send_bot_help(self, mapping):
-        embed = discord.Embed(title='Bot Commands', colour=self.COLOUR)
-        description = self.context.bot.description
-        if description:
-            embed.description = description
-        embed.set_author(name=client.user.name,
-                         icon_url=client.user.avatar_url)
-
-        for cog, commands in mapping.items():
-            name = '\u200b' if cog is None else cog.qualified_name
-            filtered = await self.filter_commands(commands, sort=True)
-            if filtered:
-                value = '\n'.join(
-                    f"{f'** {c.name} **'.ljust(20, ' ')} -\t{c.brief}" for c in commands)
-                if cog and cog.description:
-                    value = '{0}\n{1}'.format(cog.description, value)
-
-                embed.add_field(name=name, value=value)
-
-        embed.set_footer(text=self.get_ending_note())
-        await self.get_destination().send(embed=embed)
-
-    async def send_cog_help(self, cog):
-        embed = discord.Embed(
-            title='{0.qualified_name} Commands'.format(cog), colour=self.COLOUR)
-        embed.set_author(name=client.user.name,
-                         icon_url=client.user.avatar_url)
-
-        if cog.description:
-            embed.description = cog.description
-
-        filtered = await self.filter_commands(cog.get_commands(), sort=True)
-        for command in filtered:
-            embed.add_field(name=self.get_command_signature(
-                command), value=command.short_doc or '...', inline=False)
-
-        embed.set_footer(text=self.get_ending_note())
-        await self.get_destination().send(embed=embed)
-
-    async def send_group_help(self, group):
-        embed = discord.Embed(title=group.qualified_name, colour=self.COLOUR)
-        embed.set_author(name=client.user.name,
-                         icon_url=client.user.avatar_url)
-        if group.help:
-            embed.description = group.help
-
-        if isinstance(group, commands.Group):
-            filtered = await self.filter_commands(group.commands, sort=True)
-            for command in filtered:
-                embed.add_field(name=self.get_command_signature(
-                    command), value=command.short_doc or '...', inline=False)
-
-        embed.set_footer(text=self.get_ending_note())
-        await self.get_destination().send(embed=embed)
-
-    # This makes it so it uses the function above
-    # Less work for us to do since they're both similar.
-    # If you want to make regular command help look different then override it
-    send_command_help = send_group_help
-
-
 # SETS UP BASICS
-client = commands.Bot(command_prefix=('ps ', 'ps'),
+client = commands.Bot(command_prefix=('ps ', 'ps', 'Ps ', 'PS '),
                       case_insensitive=True,
                       activity=discord.Activity(
-                      type=discord.ActivityType.playing, name='sls spam'),
+                          type=discord.ActivityType.playing, name='sls spam'),
                       status=discord.Status.dnd,
-                      help_command=EmbedHelpCommand(),
                       )
 
 
@@ -99,13 +26,13 @@ async def on_ready():
 
 
 @client.command(name="ping", brief="Shows bot latency",
-help="Type ``ping`` after the respective prefix to see the bot's latency.")
+                help="Type ``ping`` after the respective prefix to see the bot's latency.")
 async def _ping(ctx):
     await ctx.send(f'Pen is spinning {round(client.latency * 1000)}ms late.')
 
 
 @client.command(name="drop", brief="Dev only",
-help="A command for me to shutdown the bot through discord, limited by ID")
+                help="A command for me to shutdown the bot through discord, limited by ID")
 async def _drop(ctx):
     if ctx.author.id in {int(os.getenv('MIZU_ID'))}:
         await ctx.send('I dropped my mod...')
@@ -119,15 +46,15 @@ async def _drop(ctx):
 
 # ATTACHES POSTS ABOUT LEARNING ORDER
 @client.command(name="Trick Order", aliases=["trickorder"],
-brief='Attaches trick order made by Mega[FPSB]',
-help='Attaches a trick order post made by french spinner Mega, in which he orders tricks by learning priority')
+                brief='Attaches trick order made by Mega[FPSB]',
+                help='Attaches a trick order post made by french spinner Mega, in which he orders tricks by learning priority')
 async def _trickorder(ctx):
     await ctx.send(file=discord.File('pics/megatrickorder.png'))
 
 
-@client.command(name="Isuk Trick Order", aliases = ['isuktrickorder'],
-brief='Attachs I.suk\'s power trick difficulty categorization/trick order',
-help='Attaches the link to isuk\'s blog inwhich he goes categorizes power tricks & links by difficulty, proving to be useful as a power trick order')
+@client.command(name="Isuk Trick Order", aliases=['isuktrickorder'],
+                brief='Attachs I.suk\'s power trick difficulty categorization/trick order',
+                help='Attaches the link to isuk\'s blog inwhich he goes categorizes power tricks & links by difficulty, proving to be useful as a power trick order')
 async def _isuktrickorder(ctx):
     await ctx.send('http://isukps.blogspot.com/2017/01/power-trick-learning-and-difficulty.html')
 
@@ -282,7 +209,8 @@ async def _sls13(ctx):
 # ATTACHES WORKSHOP PSER MEDIA SHEET
 @client.command(name="Pen Spinning Social Media List", aliases=['media'])
 async def _mediasheet(ctx):
-    await ctx.send('__**Pen Spinning Social Media List:**__\nhttps://docs.google.com/spreadsheets/d/16oxciUROIMXWHtoN7HL1wKNYM2qOvlATfhnO5pPIt4Y/edit?usp=sharing')
+    await ctx.send(
+        '__**Pen Spinning Social Media List:**__\nhttps://docs.google.com/spreadsheets/d/16oxciUROIMXWHtoN7HL1wKNYM2qOvlATfhnO5pPIt4Y/edit?usp=sharing')
 
 
 # IMPORTS COGS
