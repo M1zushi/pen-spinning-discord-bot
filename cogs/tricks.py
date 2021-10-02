@@ -18,10 +18,11 @@ class Tricks(commands.Cog):
     async def _thumbaround(self, ctx, mod='none'):
         if mod == 'none':
             await ctx.send('__**Thumbaround Tutorial:**__ https://youtu.be/vEvPPVCH6cg \n Starting Position Reference by Tombuto:')
-            await ctx.send(file=discord.File('pics/ta_startingpos_Tombuto.jpg'))
+            await ctx.send(file=discord.File('pics/ta_startingpos_by_Tombuto.jpg'))
 
         elif 'rev' in mod.lower():
             await ctx.send('__**Thumbaround Reverse Tutorial:**__ https://youtu.be/gAf0BbipZ-I')
+            await ctx.send(file=discord.File('pics/ta_rev_startingpos_by_Tombuto.jpg'))
 
     @commands.command(name="Fingerpass", aliases=['fp'])
     async def _fingerpass(self, ctx, mod='none'):
@@ -109,7 +110,7 @@ class Tricks(commands.Cog):
     async def _shadow(self, ctx, mod='none'):
         if mod == 'none':
             await ctx.send('__**Shadow:**__ https://youtu.be/T1OZvb5dKqE')
-            
+
         elif 'rev' in mod.lower():
             await ctx.send('__**Shadow Reverse:**__ https://youtu.be/nC13FIuldHg')
 
